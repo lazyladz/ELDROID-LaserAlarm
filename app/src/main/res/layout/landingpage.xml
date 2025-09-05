@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A0B0B"
+    android:gravity="center">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- Red laser circle -->
+        <ImageView
+            android:id="@+id/laserIcon"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:src="@drawable/logo1"
+            android:layout_gravity="center"/>
+
+        <!-- App Name overlapping bottom -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LaserAlarm"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@android:color/holo_red_light"
+            android:shadowColor="#FF4500"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:textStyle="italic"
+            android:shadowRadius="4"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="33dp"/>
+    </FrameLayout>
+
+</RelativeLayout>

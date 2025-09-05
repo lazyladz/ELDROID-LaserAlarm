@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "814345659989",
+    "project_id": "laseralarm-bc8e3",
+    "storage_bucket": "laseralarm-bc8e3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814345659989:android:a35b162137b2ed145a56dc",
+        "android_client_info": {
+          "package_name": "com.example.laseralarm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyeqarTXZUsjGCX3y4fjLPvaONHaK17lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

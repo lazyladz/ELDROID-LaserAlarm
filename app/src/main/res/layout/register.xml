@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    android:padding="24dp">
+
+    <!-- Laser Icon -->
+    <ImageView
+        android:id="@+id/laserIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo1" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_below="@id/laserIcon"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register\nLaserAlarm"
+        android:textSize="24sp"
+        android:textColor="#FF4500"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Username -->
+    <EditText
+        android:id="@+id/usernameEt"
+        android:layout_below="@id/titleText"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter username"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3A6A6"
+        android:inputType="textPersonName" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_below="@id/usernameEt"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter email"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3A6A6"
+        android:inputType="textEmailAddress" />
+
+    <!-- Password -->
+    <EditText
+        android:id="@+id/passwordEt"
+        android:layout_below="@id/emailEt"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter password"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3A6A6"
+        android:inputType="textPassword" />
+
+    <!-- Terms -->
+    <CheckBox
+        android:id="@+id/termsCb"
+        android:layout_below="@id/passwordEt"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms and Conditions"
+        android:textColor="#FFFFFF" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_below="@id/termsCb"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Register"
+        android:backgroundTint="#A65D5D"
+        android:background="@drawable/btn_bg"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Login -->
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_below="@id/registerBtn"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Login"
+        android:textColor="#FFA500"
+        android:textSize="14sp"/>
+</RelativeLayout>

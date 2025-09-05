@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B1B1B"
+    android:padding="16dp">
+
+    <!-- Greeting -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello user, David"
+        android:textColor="#FF4C4C"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Notification Icon -->
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Status Card -->
+    <LinearLayout
+        android:id="@+id/statusCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#3E2B2B"
+        android:padding="16dp"
+        android:layout_below="@id/tvGreeting"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:clipToOutline="true"
+        android:elevation="6dp"
+        android:layout_marginHorizontal="8dp">
+
+        <!-- Status Active -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Active"
+            android:textColor="#FF6D6D"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_gravity="center" />
+
+        <!-- System Status -->
+        <LinearLayout
+            android:id="@+id/systemStatusContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvSafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safe"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"/>
+
+
+            <TextView
+                android:id="@+id/tvTriggered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Triggered"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                />
+        </LinearLayout>
+
+        <!-- Past Events -->
+        <TextView
+            android:id="@+id/tvPastEventsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Past Events"
+            android:textColor="#FF6D6D"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:id="@+id/eventList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvEventTriggered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="09/24/2025 - Triggered at 2025-09-24 17:09"
+                android:textColor="#FFFFFF"
+                android:padding="8dp"
+                android:background="@drawable/btn_bg"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvEventSafe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="09/23/2025 - Safe Since 2025-09-23 19:00"
+                android:textColor="#FFFFFF"
+                android:padding="8dp"
+                android:background="@drawable/btn_bg"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/btn_bg"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnProfile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/user"
+            android:background="@null"
+             />
+
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/add"
+            android:background="@null"
+            android:layout_marginHorizontal="32dp" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/history"
+            android:background="@null" />
+    </LinearLayout>
+</RelativeLayout>
