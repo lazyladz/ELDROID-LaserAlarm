@@ -12,27 +12,29 @@ class DashboardActivity : AppCompatActivity(), DashboardView {
     private lateinit var presenter: DashboardPresenter
     private lateinit var progressBar: ProgressBar
     private lateinit var statusText: TextView
-    private lateinit var systemStatusText: TextView
+    private lateinit var systemSafeText: TextView
+    private lateinit var systemTriggeredText: TextView
     private lateinit var eventsLayout: LinearLayout
-    private lateinit var userNameText: TextView
+    private lateinit var greetingText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.dashboard) // ✅ matches dashboard.xml
 
         // Bind views
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = findViewById(R.id.progressBar) // Add ProgressBar in XML if missing
         statusText = findViewById(R.id.tvStatus)
-        systemStatusText = findViewById(R.id.tvSystemStatus)
-        eventsLayout = findViewById(R.id.eventsLayout)
-        userNameText = findViewById(R.id.tvUserName)
+        systemSafeText = findViewById(R.id.tvSafe)
+        systemTriggeredText = findViewById(R.id.tvTriggered)
+        eventsLayout = findViewById(R.id.eventList)
+        greetingText = findViewById(R.id.tvGreeting)
 
         // Initialize presenter
         presenter = DashboardPresenter(this)
 
         // Example username
         val userName = "David"
-        userNameText.text = "Hello user, $userName"
+        greetingText.text = "Hello user, $userName"
 
         // Load dashboard data
         presenter.loadDashboard(userName)
@@ -47,7 +49,12 @@ class DashboardActivity : AppCompatActivity(), DashboardView {
     }
 
     override fun showSystemStatus(safe: Boolean) {
-        systemStatusText.text = if (safe) "System Status: Safe" else "System Status: Triggered"
+        systemSafeText.setTextColor(
+            resources.getColor(if (safe) android.R.color.holo_green_light else android.R.color.white, null)
+        )
+        systemTriggeredText.setTextColor(
+            resources.getColor(if (!safe) android.R.color.holo_red_light else android.R.color.white, null)
+        )
     }
 
     override fun showPastEvents(events: List<String>) {

@@ -5,16 +5,23 @@
     android:background="#2B1B1B"
     android:padding="16dp">
 
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
     <!-- Greeting -->
     <TextView
         android:id="@+id/tvGreeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello user, David"
+        android:text="Hello user"
         android:textColor="#FF4C4C"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:drawablePadding="8dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp" />
 
@@ -24,7 +31,8 @@
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:src="@drawable/user" />
 
     <!-- Status Card -->
     <LinearLayout
@@ -68,8 +76,7 @@
                 android:text="Safe"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:padding="12dp"/>
-
+                android:padding="12dp" />
 
             <TextView
                 android:id="@+id/tvTriggered"
@@ -79,8 +86,7 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:padding="12dp"
-                android:layout_marginStart="8dp"
-                />
+                android:layout_marginStart="8dp" />
         </LinearLayout>
 
         <!-- Past Events -->
@@ -98,27 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:id="@+id/tvEventTriggered"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="09/24/2025 - Triggered at 2025-09-24 17:09"
-                android:textColor="#FFFFFF"
-                android:padding="8dp"
-                android:background="@drawable/btn_bg"
-                android:layout_marginBottom="6dp" />
-
-            <TextView
-                android:id="@+id/tvEventSafe"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="09/23/2025 - Safe Since 2025-09-23 19:00"
-                android:textColor="#FFFFFF"
-                android:padding="8dp"
-                android:background="@drawable/btn_bg"/>
-        </LinearLayout>
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <!-- Bottom Navigation -->
@@ -137,8 +123,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/user"
-            android:background="@null"
-             />
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/btnAdd"

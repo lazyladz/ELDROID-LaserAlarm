@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.LaserAlarm" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- App Theme -->
+    <style name="Theme.LaserAlarm" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your colors -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
 </resources>

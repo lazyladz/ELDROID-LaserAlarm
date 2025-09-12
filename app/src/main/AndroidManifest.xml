@@ -18,6 +18,9 @@
             android:name=".view.activities.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".view.activities.DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.LandingActivity"
             android:exported="true"
             android:label="@string/app_name"

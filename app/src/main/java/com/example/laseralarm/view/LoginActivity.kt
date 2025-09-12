@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.laseralarm.R
+import com.example.laseralarm.model.User
 import com.example.laseralarm.model.UserRepository
 import com.example.laseralarm.presenter.LoginPresenter
 import com.example.laseralarm.view.LoginView
@@ -46,9 +47,15 @@ class LoginActivity : AppCompatActivity(), LoginView {
         progressBar.visibility = if (show) ProgressBar.VISIBLE else ProgressBar.GONE
     }
 
-    override fun onLoginSuccess() {
-        Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-        // TODO: Navigate to dashboard
+    override fun onLoginSuccess(user: User) {
+        Toast.makeText(this, "Welcome ${user.username}!", Toast.LENGTH_SHORT).show()
+
+        // ✅ Send user data to dashboard
+        val intent = Intent(this, DashboardActivity::class.java)
+        intent.putExtra("username", user.username)
+        intent.putExtra("email", user.email)
+        startActivity(intent)
+        finish()
     }
 
     override fun onLoginFailure(message: String) {
