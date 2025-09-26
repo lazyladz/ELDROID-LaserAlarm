@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2B1B1B"
@@ -13,131 +15,181 @@
         android:layout_centerInParent="true"
         android:visibility="gone" />
 
-    <!-- Greeting -->
-    <TextView
-        android:id="@+id/tvGreeting"
+    <!-- Greeting with icon -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello user"
-        android:textColor="#FF4C4C"
-        android:textStyle="bold"
-        android:textSize="20sp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo1"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello user, David"
+            android:textColor="#FF4C4C"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <!-- Notification Icon -->
     <ImageView
         android:id="@+id/ivNotification"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/user" />
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_bell"
+        app:tint="#BCAAAA" />
 
     <!-- Status Card -->
+
+    <!-- Bottom Navigation -->
+
     <LinearLayout
         android:id="@+id/statusCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#3E2B2B"
-        android:padding="16dp"
         android:layout_below="@id/tvGreeting"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="106dp"
+        android:background="@drawable/bg_bottom_nav"
+        android:backgroundRadius="12dp"
+        android:backgroundTint="#3E2B2B"
+        android:backgroundTintMode="src_in"
         android:clipToOutline="true"
         android:elevation="6dp"
-        android:layout_marginHorizontal="8dp">
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:ignore="NotSibling">
 
         <!-- Status Active -->
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_status_chip"
+            android:padding="8dp"
             android:text="Status: Active"
             android:textColor="#FF6D6D"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:layout_gravity="center" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-        <!-- System Status -->
+        <!-- System Status (inline with chips) -->
         <LinearLayout
             android:id="@+id/systemStatusContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="12dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <!-- Label -->
+            <TextView
+                android:id="@+id/tvSystemStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:text="System Status:"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Safe chip -->
             <TextView
                 android:id="@+id/tvSafe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_safe_chip"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
                 android:text="Safe"
-                android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:padding="12dp" />
+                android:textStyle="bold" />
 
+            <!-- Triggered chip -->
             <TextView
                 android:id="@+id/tvTriggered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_triggered_chip"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
                 android:text="Triggered"
-                android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:padding="12dp"
-                android:layout_marginStart="8dp" />
+                android:textStyle="bold" />
         </LinearLayout>
+
 
         <!-- Past Events -->
         <TextView
             android:id="@+id/tvPastEventsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Past Events"
             android:textColor="#FF6D6D"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/eventList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_event_card"
             android:orientation="vertical"
-            android:layout_marginTop="8dp" />
+            android:padding="12dp" />
     </LinearLayout>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/bg_bottom_nav"
         android:layout_alignParentBottom="true"
-        android:padding="16dp">
+        android:padding="12dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="12dp"
+        android:clipToOutline="true"
+        android:backgroundTint="#3E2B2B"
+        android:elevation="8dp">
 
         <ImageButton
             android:id="@+id/btnProfile"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/user"
-            android:background="@null" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:background="@null"
+            app:tint="#FFFFFF" />
 
         <ImageButton
             android:id="@+id/btnAdd"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_add"
             android:background="@null"
-            android:layout_marginHorizontal="32dp" />
+            android:layout_marginHorizontal="48dp"
+            app:tint="#FFFFFF" />
 
         <ImageButton
             android:id="@+id/btnHistory"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/history"
-            android:background="@null" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_history"
+            android:background="@null"
+            app:tint="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>
