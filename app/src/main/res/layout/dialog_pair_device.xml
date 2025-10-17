@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#2B1B1B">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your Arduino device details:"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Device ID Input -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device ID *"
+        android:textColor="#FF6D6D"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etDeviceId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#BCAAAA"
+        android:hint="e.g., ALARM-7B3X9"
+        android:inputType="textCapCharacters"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Device Name Input -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device Name *"
+        android:textColor="#FF6D6D"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etDeviceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#BCAAAA"
+        android:hint="e.g., Front Door Laser"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Help Text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 Find the Device ID in Arduino Serial Monitor"
+        android:textColor="#BCAAAA"
+        android:textSize="12sp"
+        android:padding="8dp"
+        android:background="#3E2B2B"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp" />
+
+</LinearLayout>

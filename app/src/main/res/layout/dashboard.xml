@@ -51,9 +51,6 @@
         app:tint="#BCAAAA" />
 
     <!-- Status Card -->
-
-    <!-- Bottom Navigation -->
-
     <LinearLayout
         android:id="@+id/statusCard"
         android:layout_width="match_parent"
@@ -61,10 +58,8 @@
         android:layout_below="@id/tvGreeting"
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="106dp"
-        android:background="@drawable/bg_bottom_nav"
-        android:backgroundRadius="12dp"
+        android:background="@drawable/bg_status_card"
         android:backgroundTint="#3E2B2B"
-        android:backgroundTintMode="src_in"
         android:clipToOutline="true"
         android:elevation="6dp"
         android:orientation="vertical"
@@ -131,7 +126,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-
         <!-- Past Events -->
         <TextView
             android:id="@+id/tvPastEventsTitle"
@@ -152,16 +146,17 @@
             android:padding="12dp" />
     </LinearLayout>
 
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:background="@drawable/bg_bottom_nav"
         android:layout_alignParentBottom="true"
-        android:padding="12dp"
-        android:layout_marginHorizontal="32dp"
+        android:padding="8dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="12dp"
         android:clipToOutline="true"
         android:backgroundTint="#3E2B2B"
@@ -173,16 +168,20 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_profile"
             android:background="@null"
-            app:tint="#FFFFFF" />
+            app:tint="#FFFFFF"
+            android:layout_weight="1" />
 
+        <!-- Add Device Button (Center) -->
         <ImageButton
-            android:id="@+id/btnAdd"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnAddDevice"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:src="@drawable/ic_add"
-            android:background="@null"
-            android:layout_marginHorizontal="48dp"
-            app:tint="#FFFFFF" />
+            android:background="@drawable/ic_add"
+            app:tint="#FFFFFF"
+            android:layout_marginHorizontal="16dp"
+            android:elevation="8dp"
+            android:layout_gravity="center" />
 
         <ImageButton
             android:id="@+id/btnHistory"
@@ -190,6 +189,7 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_history"
             android:background="@null"
-            app:tint="#FFFFFF" />
+            app:tint="#FFFFFF"
+            android:layout_weight="1" />
     </LinearLayout>
 </RelativeLayout>

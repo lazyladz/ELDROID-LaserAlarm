@@ -67,7 +67,7 @@
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Enter username"
+            android:hint="Enter email"
             android:background="@drawable/edittext_bg"
             android:padding="12dp"
             android:textColor="#FFFFFF"/>

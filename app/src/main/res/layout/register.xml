@@ -12,25 +12,76 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo1" />
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/titleText"
+    <!-- New Title Block -->
+    <LinearLayout
+        android:id="@+id/titleBlock"
         android:layout_below="@id/laserIcon"
-        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register\nLaserAlarm"
-        android:textSize="24sp"
-        android:textColor="#FF4500"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/registerTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#FF7F50"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="2dp" />
+
+        <TextView
+            android:id="@+id/registerAppName"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="LaserAlarm"
+            android:textSize="40dp"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#FF4500"
+            android:gravity="end"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Full Name -->
+    <EditText
+        android:id="@+id/fullNameEt"
+        android:layout_below="@id/titleBlock"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter full name"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3A6A6"
+        android:inputType="textCapWords" />
+
+    <!-- Phone Number -->
+    <EditText
+        android:id="@+id/phoneEt"
+        android:layout_below="@id/fullNameEt"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter phone number"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3A6A6"
+        android:inputType="phone" />
 
     <!-- Username -->
     <EditText
         android:id="@+id/usernameEt"
-        android:layout_below="@id/titleText"
-        android:layout_marginTop="24dp"
+        android:layout_below="@id/phoneEt"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Enter username"

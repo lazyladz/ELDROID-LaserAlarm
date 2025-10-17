@@ -21,12 +21,25 @@ class UserRepository(
             }
     }
 
-    fun register(username: String, email: String, password: String, callback: (Boolean, String?) -> Unit) {
+    fun register(
+        fullName: String,
+        phone: String,
+        username: String,
+        email: String,
+        password: String,
+        callback: (Boolean, String?) -> Unit
+    ) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val uid = auth.currentUser!!.uid
-                    val user = User(username, email, password) // ✅ store password too (you may want to encrypt or remove password later)
+                    // Create user without password for security (password is handled by Firebase Auth)
+                    val user = User(
+                        fullName = fullName,
+                        phone = phone,
+                        username = username,
+                        email = email
+                    )
 
                     database.reference.child("Users").child(uid).setValue(user)
                         .addOnCompleteListener { dbTask ->
@@ -50,6 +63,31 @@ class UserRepository(
             }
             .addOnFailureListener {
                 callback(null)
+            }
+    }
+
+    fun updateUserProfile(
+        uid: String,
+        fullName: String,
+        phone: String,
+        username: String,
+        email: String,
+        callback: (Boolean, String?) -> Unit
+    ) {
+        val updatedUser = User(
+            fullName = fullName,
+            phone = phone,
+            username = username,
+            email = email
+        )
+
+        database.reference.child("Users").child(uid).setValue(updatedUser)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    callback(true, "Profile updated successfully")
+                } else {
+                    callback(false, task.exception?.message)
+                }
             }
     }
 }

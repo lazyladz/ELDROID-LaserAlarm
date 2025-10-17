@@ -12,6 +12,7 @@ import com.example.laseralarm.R
 import com.example.laseralarm.model.User
 import com.example.laseralarm.model.UserRepository
 import com.example.laseralarm.presenter.LoginPresenter
+import com.example.laseralarm.utils.UserManager
 import com.example.laseralarm.view.LoginView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -49,6 +50,15 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun onLoginSuccess(user: User) {
         Toast.makeText(this, "Welcome ${user.username}!", Toast.LENGTH_SHORT).show()
+
+        // ✅ Save all user data to SharedPreferences using UserManager
+        UserManager.saveUserData(
+            this,
+            user.fullName,
+            user.phone,
+            user.username,
+            user.email
+        )
 
         // ✅ Send user data to dashboard
         val intent = Intent(this, DashboardActivity::class.java)

@@ -19,6 +19,9 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
+        // Initialize all EditText fields
+        val fullNameEt = findViewById<EditText>(R.id.fullNameEt)
+        val phoneEt = findViewById<EditText>(R.id.phoneEt)
         val usernameEt = findViewById<EditText>(R.id.usernameEt)
         val emailEt = findViewById<EditText>(R.id.emailEt)
         val passwordEt = findViewById<EditText>(R.id.passwordEt)
@@ -30,12 +33,14 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
         presenter = RegisterPresenter(this, UserRepository(FirebaseAuth.getInstance()))
 
         registerBtn.setOnClickListener {
+            val fullName = fullNameEt.text.toString().trim()
+            val phone = phoneEt.text.toString().trim()
             val username = usernameEt.text.toString().trim()
             val email = emailEt.text.toString().trim()
             val password = passwordEt.text.toString().trim()
             val acceptedTerms = termsCb.isChecked
 
-            presenter.registerUser(username, email, password, acceptedTerms)
+            presenter.registerUser(fullName, phone, username, email, password, acceptedTerms)
         }
 
         loginText.setOnClickListener {

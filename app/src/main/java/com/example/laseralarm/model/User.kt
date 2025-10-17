@@ -1,9 +1,10 @@
 package com.example.laseralarm.model
 
-// User.kt
+// Updated User.kt
 data class User(
+    val fullName: String = "",
+    val phone: String = "",
     val username: String = "",
     val email: String = "",
-    val password: String = ""
+    val password: String = "" // Consider removing password from User model for security
 )
-

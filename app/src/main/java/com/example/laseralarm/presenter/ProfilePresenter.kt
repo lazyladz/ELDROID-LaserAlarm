@@ -1,24 +1,38 @@
 package com.example.laseralarm.presenter
 
-import com.example.laseralarm.view.ProfileView
+import com.example.laseralarm.model.UserRepository
+import com.google.firebase.auth.FirebaseAuth
 
-class ProfilePresenter(private val view: ProfileView) {
+class ProfilePresenter(
+    private val userRepository: UserRepository
+) {
 
-    fun loadProfile() {
-        // TODO: fetch from database/session
-        val username = "David"
-        val email = "davidzaaron.serad@gmail.com"
+    fun updateUserProfile(
+        fullName: String,
+        phone: String,
+        username: String,
+        email: String,
+        onSuccess: (String) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            onError("User not authenticated")
+            return
+        }
 
-        view.showProfile(username, email)
-    }
-
-    fun onEditProfileClicked() {
-        view.showMessage("Edit Profile clicked")
-        // Navigate to edit profile screen if needed
-    }
-
-    fun onLogoutClicked() {
-        view.showMessage("Logged out")
-        // TODO: handle logout (clear session, redirect to login, etc.)
+        userRepository.updateUserProfile(
+            uid = currentUser.uid,
+            fullName = fullName,
+            phone = phone,
+            username = username,
+            email = email
+        ) { success, message ->
+            if (success) {
+                onSuccess(message ?: "Profile updated successfully")
+            } else {
+                onError(message ?: "Failed to update profile")
+            }
+        }
     }
 }

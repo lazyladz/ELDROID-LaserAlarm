@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,20 +24,37 @@
         android:src="@drawable/ic_profile"
         android:layout_marginBottom="16dp" />
 
+    <!-- Add Full Name field -->
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name: "
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Add Phone field -->
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone: "
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp" />
+
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username: David"
+        android:text="Username: "
         android:textColor="@android:color/white"
-        android:src="@drawable/button1"
         android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email: david@example.com"
+        android:text="Email: "
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp" />
 
