@@ -1,0 +1,174 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#1A0B0B">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+
+        <ImageView
+            android:id="@+id/laserIcon"
+            android:layout_width="165dp"
+            android:layout_height="135dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo4" />
+
+
+        <!-- New Title Block -->
+        <LinearLayout
+            android:id="@+id/titleBlock"
+            android:layout_below="@id/laserIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/registerTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#FF7F50"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:id="@+id/registerAppName"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="LaserAlarm"
+                android:textSize="40dp"
+                android:textStyle="italic"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#FF4500"
+                android:gravity="end"
+                android:includeFontPadding="false" />
+        </LinearLayout>
+
+        <!-- Full Name -->
+        <EditText
+            android:id="@+id/fullNameEt"
+            android:layout_below="@id/titleBlock"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter full name"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3A6A6"
+            android:inputType="textCapWords" />
+
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_below="@id/fullNameEt"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter phone number"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3A6A6"
+            android:inputType="phone" />
+
+        <!-- Username -->
+        <EditText
+            android:id="@+id/usernameEt"
+            android:layout_below="@id/phoneEt"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter username"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3A6A6"
+            android:inputType="textPersonName" />
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_below="@id/usernameEt"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter email"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3A6A6"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/passwordEt"
+            android:layout_below="@id/emailEt"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter password"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3A6A6"
+            android:inputType="textPassword" />
+
+        <!-- Terms -->
+        <CheckBox
+            android:id="@+id/termsCb"
+            android:layout_below="@id/passwordEt"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions"
+            android:textColor="#FFFFFF" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_below="@id/termsCb"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Register"
+            android:backgroundTint="#A65D5D"
+            android:background="@drawable/btn_bg"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Login -->
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_below="@id/registerBtn"
+            android:layout_marginTop="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Login"
+            android:textColor="#FFA500"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+</ScrollView>

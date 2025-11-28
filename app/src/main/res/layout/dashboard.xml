@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B1B1B"
+    android:padding="16dp">
+
+    <!-- Swipe Refresh Layout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Progress Bar -->
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <!-- Greeting with icon -->
+                <LinearLayout
+                    android:id="@+id/greetingLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/logo1"
+                        android:layout_marginEnd="6dp" />
+
+                    <TextView
+                        android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello user, David"
+                        android:textColor="#FF4C4C"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_bell"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="#BCAAAA" />
+
+                <!-- Status Card -->
+                <LinearLayout
+                    android:id="@+id/statusCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/greetingLayout"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_status_card"
+                    android:backgroundTint="#3E2B2B"
+                    android:clipToOutline="true"
+                    android:elevation="6dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    tools:ignore="NotSibling">
+
+                    <!-- Status Active -->
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_status_chip"
+                        android:padding="8dp"
+                        android:text="Status: Active"
+                        android:textColor="#FF6D6D"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <!-- System Status (inline with chips) -->
+                    <!-- System Status (Online/Offline) -->
+                    <LinearLayout
+                        android:id="@+id/systemStatusContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Label -->
+                        <TextView
+                            android:id="@+id/tvSystemStatusLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:text="System Status:"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <!-- Online chip -->
+                        <TextView
+                            android:id="@+id/tvOnline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_online_chip"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="8dp"
+                            android:text="Online"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <!-- Offline chip -->
+                        <TextView
+                            android:id="@+id/tvOffline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_offline_chip"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="8dp"
+                            android:text="Offline"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Past Events -->
+                    <TextView
+                        android:id="@+id/tvPastEventsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Past Events"
+                        android:textColor="#FF6D6D"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/eventList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_event_card"
+                        android:orientation="vertical"
+                        android:padding="12dp" />
+                </LinearLayout>
+
+                <!-- Bottom Navigation -->
+                <LinearLayout
+                    android:id="@+id/bottomNav"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/bg_bottom_nav"
+                    android:layout_alignParentBottom="true"
+                    android:padding="8dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true"
+                    android:backgroundTint="#3E2B2B"
+                    android:elevation="8dp">
+
+                    <ImageButton
+                        android:id="@+id/btnProfile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_profile"
+                        android:background="@null"
+                        app:tint="#FFFFFF"
+                        android:layout_weight="1" />
+
+                    <!-- Add Device Button (Center) -->
+                    <ImageButton
+                        android:id="@+id/btnAddDevice"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_add"
+                        android:background="@drawable/ic_add"
+                        app:tint="#FFFFFF"
+                        android:layout_marginHorizontal="16dp"
+                        android:elevation="8dp"
+                        android:layout_gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/btnHistory"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_history"
+                        android:background="@null"
+                        app:tint="#FFFFFF"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>
